@@ -11,6 +11,7 @@
 		B04848811A1CB267000B6576 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B04848801A1CB267000B6576 /* Images.xcassets */; };
 		B04848841A1CB267000B6576 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = B04848821A1CB267000B6576 /* MainMenu.xib */; };
 		B04848901A1CB267000B6576 /* TrackMixTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B048488F1A1CB267000B6576 /* TrackMixTests.swift */; };
+		B048489A1A1CC5BE000B6576 /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = B04848991A1CC5BE000B6576 /* Track.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,6 +33,7 @@
 		B04848891A1CB267000B6576 /* TrackMixTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TrackMixTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B048488E1A1CB267000B6576 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B048488F1A1CB267000B6576 /* TrackMixTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackMixTests.swift; sourceTree = "<group>"; };
+		B04848991A1CC5BE000B6576 /* Track.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Track.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,7 @@
 		B048487B1A1CB267000B6576 /* TrackMix */ = {
 			isa = PBXGroup;
 			children = (
+				B04848991A1CC5BE000B6576 /* Track.swift */,
 				B048487E1A1CB267000B6576 /* AppDelegate.swift */,
 				B04848801A1CB267000B6576 /* Images.xcassets */,
 				B04848821A1CB267000B6576 /* MainMenu.xib */,
@@ -206,6 +209,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B048487F1A1CB267000B6576 /* AppDelegate.swift in Sources */,
+				B048489A1A1CC5BE000B6576 /* Track.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
