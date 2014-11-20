@@ -29,3 +29,7 @@ DerivedData
 *.out
 *.exe
 *.swp
+
+# node and bower
+node_modules
+bower_components

@@ -673,6 +673,8 @@
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="335" y="390" width="240" height="360"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1366" height="745"/>
+            <value key="minSize" type="size" width="240" height="360"/>
+            <value key="maxSize" type="size" width="240" height="360"/>
             <view key="contentView" id="EiT-Mj-1SZ">
                 <rect key="frame" x="0.0" y="0.0" width="240" height="360"/>
                 <autoresizingMask key="autoresizingMask"/>
@@ -680,6 +682,10 @@
                     <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="L0v-qg-yX1">
                         <rect key="frame" x="72" y="318" width="96" height="22"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="center" title="5" drawsBackground="YES" id="vTB-4f-SC3">
+                            <numberFormatter key="formatter" formatterBehavior="custom10_4" numberStyle="decimal" minimumIntegerDigits="1" maximumIntegerDigits="2000000000" maximumFractionDigits="2" id="2EF-iW-19E">
+                                <real key="minimum" value="0.0"/>
+                                <real key="maximum" value="11"/>
+                            </numberFormatter>
                             <font key="font" metaFont="system"/>
                             <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
