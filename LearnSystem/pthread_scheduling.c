@@ -41,6 +41,6 @@ int main(int argc, char *argv[]) {
 
 /* Each thread will begin control in this function */
 void *runner(void *param) {
-  printf("thread running ------ %d\n", param);
+  printf("thread running ------ %d\n", (int)param);
   pthread_exit(0);
 }
