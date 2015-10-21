@@ -1,6 +1,4 @@
-﻿// 有关“空白”模板的简介，请参阅以下文档: 
-// http://go.microsoft.com/fwlink/?LinkId=232509
-(function () {
+﻿(function () {
     "use strict";
 
     var app = WinJS.Application;
