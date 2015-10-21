@@ -20,7 +20,7 @@
       </m2:VisualElements>
       <Extensions>
         <Extension Category="windows.contactPicker" StartPage="contactPicker.html" />
-        <Extension Category="windows.search" StartPage="default.html" />
+        <Extension Category="windows.search" />
       </Extensions>
     </Application>
   </Applications>

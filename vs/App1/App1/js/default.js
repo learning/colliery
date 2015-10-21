@@ -75,7 +75,7 @@
     }
 
     function searchHandler(evt) {
-        console.log('searchHandler');
+        console.log('submit: ' + evt.queryText);
     }
 
     function suggestionHandler(evt) {
@@ -89,6 +89,23 @@
         suggestionCollection.appendQuerySuggestion(queryText + ' ！！！');
     }
 
+    function suggestionRequestHandler(evt) {
+        var queryText = evt.queryText;
+        console.log('suggestion: ' + queryText);
+    }
+
+    function shareHandler(evt) {
+        var request = evt.request;
+        request.data.properties.title = 'Cutomize Title for this share';
+        request.data.properties.description = 'Oh my share!';
+        request.data.setText('$ npm install my-share-for-windows-phone');
+    }
+
+    function registerForShare() {
+        var dataTransferManager = Windows.ApplicationModel.DataTransfer.DataTransferManager.getForCurrentView();
+        dataTransferManager.addEventListener('datarequested', shareHandler);
+    }
+
     app.onactivated = function (args) {
         if (args.detail.kind === activation.ActivationKind.launch) {
             if (args.detail.previousExecutionState !== activation.ApplicationExecutionState.terminated) {
@@ -96,14 +113,19 @@
                 //您的应用程序。
                 document.getElementById('btn').addEventListener('click', pickContact);
                 document.getElementById('btn2').addEventListener('click', pickContacts);
-                document.getElementById('searchBox').addEventListener('querysubmitted', searchHandler);
-                document.getElementById('searchBox').addEventListener('suggestionsrequested', suggestionHandler);
-                // Windows.ApplicationModel.Search.SearchPane.getForCurrentView().onquerysubmitted = searchHandler;
+                // document.getElementById('searchBox').addEventListener('querysubmitted', searchHandler);
+                // document.getElementById('searchBox').addEventListener('suggestionsrequested', suggestionHandler);
+                Windows.ApplicationModel.Search.SearchPane.getForCurrentView().onquerysubmitted = searchHandler;
+                Windows.ApplicationModel.Search.SearchPane.getForCurrentView().onsuggestionsrequested = suggestionRequestHandler;
+                
+                registerForShare();
             } else {
                 // TODO:  此应用程序已从挂起状态重新激活。
                 // 在此处恢复应用程序状态。
             }
             args.setPromise(WinJS.UI.processAll());
+        } else if (args.detail.kind === activation.ActivationKind.search) {
+            document.getElementById('btn').innerText = 'xxxxxxx';
         }
     };
 
