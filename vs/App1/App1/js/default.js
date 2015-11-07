@@ -92,6 +92,11 @@
         console.log('suggestion: ' + queryText);
     }
 
+    function shareDirectly() {
+        //Windows.ApplicationModel.DataTransfer.DataTransferManager.showShareUI();
+        WinJS.UI.SettingsFlyout.showSettings('helpDiv', 'settings/help.html');
+    }
+
     function shareHandler(evt) {
         var request = evt.request;
         request.data.properties.title = 'Cutomize Title for this share';
@@ -111,6 +116,7 @@
                 //您的应用程序。
                 document.getElementById('btn').addEventListener('click', pickContact);
                 document.getElementById('btn2').addEventListener('click', pickContacts);
+                document.getElementById('shareDirectly').addEventListener('click', shareDirectly);
                 // document.getElementById('searchBox').addEventListener('querysubmitted', searchHandler);
                 // document.getElementById('searchBox').addEventListener('suggestionsrequested', suggestionHandler);
                 Windows.ApplicationModel.Search.SearchPane.getForCurrentView().onquerysubmitted = searchHandler;
@@ -134,6 +140,15 @@
         //挂起中自动保存和恢复。如果您需要在
         //挂起应用程序之前完成异步操作，请调用
         // args.setPromise()。
+    };
+
+    app.onsettings = function (e) {
+        e.detail.applicationcommands = {
+            defaultsDiv: { href: 'settings/default.html', title: 'Defaults' },
+            helpDiv: { href: 'settings/help.html', title: 'Help' }
+        };
+
+        WinJS.UI.SettingsFlyout.populateSettings(e);
     };
 
     app.start();
